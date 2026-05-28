@@ -195,7 +195,7 @@
 .resume-proj-desc {
   font-size: 13px;
   color: var(--text);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   line-height: 1.55;
   text-indent: 2em;
 }
@@ -252,7 +252,7 @@
 
 .resume-root ul {
   padding-left: 18px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   list-style-type: none;
 }
 
@@ -273,8 +273,8 @@
 
 .resume-tech-stack {
   font-size: 13px;
-  color: var(--subtle);
-  margin-top: 2px;
+  color: var(--text);
+  margin-top: 4px;
 }
 
 /* ── Certificates / Languages / Simple list ── */
