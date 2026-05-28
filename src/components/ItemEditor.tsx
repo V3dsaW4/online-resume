@@ -25,7 +25,7 @@ export const ItemEditor = memo(function ItemEditor({
 
   const getValue = (item: ResumeItem, key: string): string => {
     if (key === "highlights") return item.highlights.join("\n");
-    return (item as Record<string, unknown>)[key] as string || "";
+    return (item as unknown as Record<string, unknown>)[key] as string || "";
   };
 
   const setValue = (itemId: string, key: string, value: string) => {
