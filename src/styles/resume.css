@@ -1,0 +1,292 @@
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --text: #222222;
+  --subtle: #555555;
+  --primary: #2878b5;
+  --line: #2878b5;
+  --link: #2878b5;
+}
+
+.resume-root {
+  color: var(--text);
+  background: var(--bg);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.resume-root a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.resume-root a:hover {
+  text-decoration: underline;
+}
+
+.resume-meta a {
+  color: inherit !important;
+}
+
+.resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: var(--panel);
+  padding: 28px 32px;
+}
+
+/* ── Header ── */
+
+.resume-header {
+  margin-bottom: 4px;
+}
+
+.resume-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.resume-header-left {
+  flex: 1;
+}
+
+.resume-header-left h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.resume-header-left .resume-meta {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 3px;
+  line-height: 1.6;
+}
+
+.resume-meta-sep {
+  margin: 0 12px;
+  color: var(--subtle);
+}
+
+.resume-date-sep {
+  margin: 0 6px;
+}
+
+.resume-photo {
+  width: 85px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+/* ── Section headers ── */
+
+.resume-section {
+  margin-top: 10px;
+}
+
+.resume-section h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--line);
+  margin-bottom: 8px;
+}
+
+/* ── Education items ── */
+
+.resume-edu-item {
+  margin-bottom: 10px;
+}
+
+.resume-edu-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Code links ── */
+
+.resume-code-links p {
+  font-size: 13.5px;
+  margin-bottom: 2px;
+}
+
+/* ── Docs ── */
+
+.resume-docs-summary {
+  font-size: 13.5px;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+/* ── Project blocks ── */
+
+.resume-block {
+  margin-bottom: 14px;
+}
+
+.resume-proj-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.resume-proj-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 180px;
+  max-width: 180px;
+  flex-shrink: 0;
+}
+
+.resume-proj-company {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resume-proj-company a {
+  color: inherit !important;
+}
+
+.resume-proj-company a:hover {
+  color: inherit !important;
+}
+
+.resume-proj-role {
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+  width: 200px;
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.resume-proj-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.resume-proj-title a {
+  color: inherit !important;
+}
+
+.resume-proj-title a:hover {
+  color: inherit !important;
+}
+
+.resume-proj-desc {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 2px;
+  line-height: 1.55;
+  text-indent: 2em;
+}
+
+.resume-portfolio-item {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 2px;
+  line-height: 1.55;
+  position: relative;
+  padding-left: 2em;
+}
+
+.resume-portfolio-item::before {
+  content: "·";
+  position: absolute;
+  left: 1em;
+  font-weight: 700;
+}
+
+.resume-portfolio-title {
+  font-weight: 700;
+}
+
+.resume-portfolio-desc {
+  color: var(--text);
+}
+
+.resume-portfolio-sep {
+  color: var(--text);
+}
+
+.resume-portfolio-link-gap {
+  margin-right: 12px;
+}
+
+.resume-portfolio-link {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.resume-portfolio-link:hover {
+  text-decoration: underline;
+}
+
+.resume-portfolio-link-wrap {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.resume-portfolio-link-wrap:hover {
+  color: inherit !important;
+}
+
+.resume-root ul {
+  padding-left: 18px;
+  margin-bottom: 8px;
+  list-style-type: none;
+}
+
+.resume-root li {
+  font-size: 13px;
+  margin-bottom: 2px;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 1em;
+}
+
+.resume-root li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.resume-tech-stack {
+  font-size: 13px;
+  color: var(--subtle);
+  margin-top: 2px;
+}
+
+/* ── Certificates / Languages / Simple list ── */
+
+.resume-simple-list p {
+  font-size: 13.5px;
+  margin-bottom: 3px;
+}
+
+@media screen {
+  .resume-page {
+    margin: 0 auto 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  }
+}

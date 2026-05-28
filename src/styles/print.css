@@ -1,0 +1,78 @@
+.print-only {
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+
+.print-only .resume-root {
+  background: white;
+}
+
+.print-only .resume-page {
+  width: 100%;
+  margin: 0;
+  padding: 20px 24px;
+  min-height: auto;
+  box-shadow: none;
+}
+
+@media print {
+  .no-print,
+  .editor-panel,
+  .mobile-toggle,
+  .lg\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  /* Force show the desktop flex container and hide editor panel */
+  .hidden.lg\:flex {
+    display: flex !important;
+  }
+
+  .editor-panel {
+    display: none !important;
+  }
+
+  .preview-panel {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: white !important;
+    flex: 1 !important;
+  }
+
+  .resume-root {
+    background: white;
+  }
+
+  .resume-page {
+    width: 100%;
+    margin: 0;
+    padding: 20px 24px;
+    min-height: auto;
+    box-shadow: none;
+  }
+
+  .resume-root a {
+    color: inherit !important;
+    text-decoration: none;
+  }
+
+  .resume-section {
+    break-inside: avoid;
+  }
+
+  .resume-block {
+    break-inside: avoid;
+  }
+
+  @page {
+    size: A4;
+    margin: 5mm 3mm;
+  }
+}
