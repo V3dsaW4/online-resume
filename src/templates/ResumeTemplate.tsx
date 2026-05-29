@@ -137,37 +137,41 @@ const PortfolioSection = memo(function PortfolioSection({ section }: { section: 
   return (
     <section className="resume-section">
       <h2>{section.title}</h2>
-      {section.items.map((item) => (
-        <div key={item.id} className="resume-portfolio-item">
-          {displayMode === "default" ? (
-            <>
-              {item.title && <span className="resume-portfolio-title">{item.title}</span>}
-              {(item.title && (item.subtitle || item.url)) && <span className="resume-portfolio-sep"> —— </span>}
-              {item.subtitle && <span className="resume-portfolio-desc">{item.subtitle}</span>}
-              {item.subtitle && item.url && <span className="resume-portfolio-link-gap"> </span>}
-              {item.url && (
-                <a href={normalizeUrl(item.url)} target="_blank" rel="noreferrer" className="resume-portfolio-link">
-                  {item.url}
-                </a>
-              )}
-            </>
-          ) : (
-            item.url ? (
-              <a href={normalizeUrl(item.url)} target="_blank" rel="noreferrer" className="resume-portfolio-link-wrap">
-                {item.title && <strong>{item.title}</strong>}
-                {(item.title && item.subtitle) && <span className="resume-portfolio-sep"> —— </span>}
-                {item.subtitle}
-              </a>
-            ) : (
+      {section.items.map((item) => {
+        const hasContent = item.title || item.subtitle || item.url;
+        if (!hasContent) return null;
+        return (
+          <div key={item.id} className="resume-portfolio-item">
+            {displayMode === "default" ? (
               <>
-                {item.title && <strong>{item.title}</strong>}
-                {(item.title && item.subtitle) && <span className="resume-portfolio-sep"> —— </span>}
-                {item.subtitle}
+                {item.title && <span className="resume-portfolio-title">{item.title}</span>}
+                {(item.title && (item.subtitle || item.url)) && <span className="resume-portfolio-sep"> —— </span>}
+                {item.subtitle && <span className="resume-portfolio-desc">{item.subtitle}</span>}
+                {item.subtitle && item.url && <span className="resume-portfolio-link-gap"> </span>}
+                {item.url && (
+                  <a href={normalizeUrl(item.url)} target="_blank" rel="noreferrer" className="resume-portfolio-link">
+                    {item.url}
+                  </a>
+                )}
               </>
-            )
-          )}
-        </div>
-      ))}
+            ) : (
+              item.url ? (
+                <a href={normalizeUrl(item.url)} target="_blank" rel="noreferrer" className="resume-portfolio-link-wrap">
+                  {item.title && <strong>{item.title}</strong>}
+                  {(item.title && item.subtitle) && <span className="resume-portfolio-sep"> —— </span>}
+                  {item.subtitle}
+                </a>
+              ) : (
+                <>
+                  {item.title && <strong>{item.title}</strong>}
+                  {(item.title && item.subtitle) && <span className="resume-portfolio-sep"> —— </span>}
+                  {item.subtitle}
+                </>
+              )
+            )}
+          </div>
+        );
+      })}
     </section>
   );
 });
