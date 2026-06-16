@@ -52,7 +52,11 @@ const Header = memo(function Header() {
       <div className="resume-header-main">
         <div className="resume-header-left">
           <h1>{basics.name || "Your Name"}</h1>
-          {basics.position && <p className="resume-meta">{basics.position}</p>}
+          {basics.position && (
+            <p className="resume-meta">
+              求职岗位：{basics.position}
+            </p>
+          )}
           {contactParts.length > 0 && (
             <p className="resume-meta">{contactParts.map((part, i) => (
               <span key={i}>
