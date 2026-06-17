@@ -3,22 +3,27 @@ import { EditorPanel } from "./components/EditorPanel";
 import { PreviewPanel } from "./components/PreviewPanel";
 import { MobileToggle } from "./components/MobileToggle";
 import { ResumeTemplate } from "./templates/ResumeTemplate";
+import { useResumeStore } from "./store/resumeStore";
 
 export default function App() {
   const [mobileMode, setMobileMode] = useState<"editor" | "preview">("editor");
   const [isPrinting, setIsPrinting] = useState(false);
+  const name = useResumeStore((s) => s.data.basics.name);
 
   const handleToggle = useCallback((mode: "editor" | "preview") => {
     setMobileMode(mode);
   }, []);
 
   const handlePrint = useCallback(() => {
+    const originalTitle = document.title;
+    document.title = name || "简历";
     setIsPrinting(true);
     setTimeout(() => {
       window.print();
       setIsPrinting(false);
+      document.title = originalTitle;
     }, 500);
-  }, []);
+  }, [name]);
 
   if (isPrinting) {
     return (
