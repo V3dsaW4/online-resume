@@ -133,6 +133,15 @@
   margin-bottom: 14px;
 }
 
+.resume-skill-compact {
+  margin-bottom: 2px;
+}
+
+.resume-skill-dot {
+  color: var(--text);
+  font-weight: bold;
+}
+
 .resume-proj-row {
   display: flex;
   align-items: baseline;

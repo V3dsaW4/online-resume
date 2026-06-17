@@ -202,9 +202,14 @@ const SkillsSection = memo(function SkillsSection({ section }: { section: Resume
     <section className="resume-section">
       <h2>{section.title}</h2>
       {section.items.map((item) => (
-        <div key={item.id} className="resume-block">
+        <div key={item.id} className={`resume-block${!item.title ? " resume-skill-compact" : ""}`}>
           {item.title && <p className="resume-proj-title">{item.title}</p>}
-          {item.subtitle && <p className="resume-proj-desc">{item.subtitle}</p>}
+          {item.subtitle && (
+            <p className="resume-proj-desc">
+              {!item.title && <span className="resume-skill-dot">• </span>}
+              {item.subtitle}
+            </p>
+          )}
         </div>
       ))}
     </section>
