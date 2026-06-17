@@ -260,7 +260,8 @@
 }
 
 .resume-root ul {
-  padding-left: 18px;
+  padding-left: 2em;
+  margin-left: 0;
   margin-bottom: 4px;
   list-style-type: none;
 }
